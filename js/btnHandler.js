@@ -3,7 +3,7 @@ import {
   overlay, modal,
   modalName, modalText,
   newEltex, newTplink,
-} from '/js/domElements.js'
+} from './domElements.js'
 
 let newBtnName = null
 let newBtnText = null

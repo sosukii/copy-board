@@ -1,5 +1,6 @@
-import {} from '/js/btnHandler.js';
-import {inputEl, wrapper} from '/js/domElements.js'
+import {} from './js/btnHandler.js';
+import {inputEl, wrapper} from './js/domElements.js'
+
 
 let userNum = null
 
