@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script type="module" defer src="index.js"></script>
+  <title>Copy Board</title>
+</head>
+
+<body>
+  <header>
+
+  </header>
+  <main>
+    <div class="wrapper">
+      <input class="num" type="number">
+      <section class="btns">
+        <h2 class="title">Eltex:</h2>
+        <div class="btns__eltex">
+          <button class="btn copy" id="0">one</button>
+          <button class="btn copy" id="1">two</button>
+          <button class="btn copy" id="2">three</button>
+        </div>
+        <button class="btn new new-eltex">new button</button>
+
+      </section>
+      <section class="btns">
+        <h2 class="title">TP Link:</h2>
+        <div class="btns__tplink">
+          <button class="btn copy" id="3">four</button>
+          <button class="btn copy" id="4">five</button>
+          <button class="btn copy" id="5">six</button>
+        </div>
+        <button class="btn new new-tplink">new button</button>
+      </section>
+    </div>
+    <div class="overlay"></div>
+    <div class="modal">
+      <div class="modal-content">
+        <h3 class="modal__titel">Creating new button</h3>
+        <input class="modal__name" type="text" placeholder="Enter button name...">
+        <textarea class="modal__text" name="" id="" cols="30"
+          placeholder="Paste text and press Create button"></textarea>
+        <button class="btn modal__btn">Create button</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+
+</html>
