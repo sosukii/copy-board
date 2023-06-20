@@ -1,0 +1,31 @@
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(183, 109, 251);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(163, 80, 241);
+}
+
+.input {
+  padding: 5px 10px;
+  border-radius: 30px;
+  border-color: inherit;
+}
+
+.heading {
+  font-size: 1.5rem;
+}
+
+.section {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}

@@ -2,46 +2,37 @@ import {} from './js/btnHandler.js';
 import {inputEl, wrapper} from './js/domElements.js'
 
 let userNum = null
+const setUserNum = e => userNum = e.target.value
 
-const data = [
-  `какой-то очень длинный ПЕРВЫЙ текст и значение - ${userNum} - по середине этого супер длинного текста`,
-  `какой-то очень длинный ВТОРОЙ текст и значение - ${userNum} - по середине этого супер длинного текста`,
-  `какой-то очень длинный ТРЕТИЙ текст и значение - ${userNum} - по середине этого супер длинного текста`,
-  `какой-то очень длинный ЧЕТВЕРТЫЙ текст и значение - ${userNum} - по середине этого супер длинного текста`,
-  `какой-то очень длинный ПЯТЫЙ текст и значение - ${userNum} - по середине этого супер длинного текста`,
-  `какой-то очень длинный ШЕСТОЙ текст и значение - ${userNum} - по середине этого супер длинного текста`,
-]
+function returnStringByIndex(index, userNum) {
+  const data = [
+    `01 ${userNum} какой-то\nочень длинный\nПЕРВЫЙ текст\nи значение - ${userNum} - по середине\nэтого супер длинного текста`,
+    `02 какой-то ${userNum}\nочень длинный\nВТОРОЙ текст\nи значение - ${userNum} - по середине\nэтого супер длинного текста`,
+    `03 какой-то очень длинный ${userNum}\nТРЕТИЙ текст и значение - ${userNum} - по середине\nэтого супер длинного текста`,
+    `04 какой-то очень длинный \nЧЕТВЕРТЫЙ ${userNum} текст и значение - ${userNum} - по середине\nэтого супер длинного текста`,
+    `05 какой-то очень длинный \nПЯТЫЙ текст ${userNum} и значение - ${userNum} - по середине\nэтого супер длинного текста`,
+    `06 какой-то очень длинный \nШЕСТОЙ текст и значение - ${userNum} - по середине ${userNum}\nэтого супер длинного текста`,
+  ]
+  return data[index]
+}
 
 async function handler(e) {
   if(!e.target.classList.contains('copy')) return
 
-  const dataValue = e.target.getAttribute('data');
+  const index = +e.target.getAttribute('id')
+  const str = returnStringByIndex(index, userNum)
 
   try {
-    await navigator.clipboard.writeText(dataValue); // копируем значение в буфер обмена
+    await navigator.clipboard.writeText(str);
 
-    console.log(`Значение ${dataValue} успешно скопировано в буфер обмена`);
+    const copiedValue = await navigator.clipboard.readText();
 
-    const copiedValue = await navigator.clipboard.readText(); // получаем доступ к скопированному значению
-
-    console.log(`Скопированное значение: ${copiedValue}`);
+    alert(`✅Скопировано в буфер обмена:\n${copiedValue}`)
+    console.log(`Скопированное значение:\n${copiedValue}`);
   } catch (err) {
     console.error(`Не удалось скопировать значение в буфер обмена: ${err}`);
   }
 }
 
-const readNumber = e => userNum = e.target.value
-
-function saveNumber(e) {
-  if(e.key !== 'Enter' || userNum === null) return
-
-  const btns = document.querySelectorAll('.copy')
-  btns.forEach(btn => {
-    btn.setAttribute('data', `${btn.getAttribute('data')} ${userNum} DUDE`)
-  })
-  console.log('enter has been peresed! yay')
-}
-
 wrapper.addEventListener('click', handler)
-inputEl.addEventListener('input', readNumber)
-inputEl.addEventListener('keypress', saveNumber)
+inputEl.addEventListener('input', setUserNum)

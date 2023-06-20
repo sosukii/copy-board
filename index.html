@@ -15,38 +15,44 @@
 
   </header>
   <main>
-    <div class="wrapper">
-      <input class="num" type="number">
-      <section class="btns">
-        <h2 class="title">Eltex:</h2>
-        <div class="btns__eltex">
-          <button class="btn copy" id="0">one</button>
-          <button class="btn copy" id="1">two</button>
-          <button class="btn copy" id="2">three</button>
+    <div class="container">
+      <div class="wrapper">
+        <div class="head">
+          <h2 class="heading dynamic-variable-title">Enter dynamic variable:</h2>
+          <input class="input dynamic-variable" type="number" placeholder="978 (numbers allowed)">
         </div>
-        <button class="btn new new-eltex">new button</button>
+        <section class="section">
+          <h2 class="section__heading heading">Eltex:</h2>
+          <div class="section__btns section__btns_eltex">
+            <button class="btn section__btn copy" id="0">One</button>
+            <button class="btn section__btn copy" id="1">Two</button>
+            <button class="btn section__btn copy" id="2">Three</button>
+          </div>
+          <button class="btn section__btn btn_new new_eltex">Create new button</button>
 
-      </section>
-      <section class="btns">
-        <h2 class="title">TP Link:</h2>
-        <div class="btns__tplink">
-          <button class="btn copy" id="3">four</button>
-          <button class="btn copy" id="4">five</button>
-          <button class="btn copy" id="5">six</button>
+        </section>
+        <section class="section">
+          <h2 class="section__heading heading">TP Link:</h2>
+          <div class="section__btns section__btns_tplink">
+            <button class="btn section__btn copy" id="3">Four</button>
+            <button class="btn section__btn copy" id="4">Five</button>
+            <button class="btn section__btn copy" id="5">Six</button>
+          </div>
+          <button class="btn section__btn btn_new new_tplink">Create new button</button>
+        </section>
+      </div>
+      <div class="overlay"></div>
+      <div class="modal">
+        <div class="modal-content">
+          <h3 class="modal__titel">Creating new button</h3>
+          <input class="input modal__name" type="text" placeholder="Enter button name...">
+          <textarea class="modal__text" cols="30" placeholder="Paste text and press Create button">
+          </textarea>
+          <button class="btn modal__btn">Create button</button>
         </div>
-        <button class="btn new new-tplink">new button</button>
-      </section>
-    </div>
-    <div class="overlay"></div>
-    <div class="modal">
-      <div class="modal-content">
-        <h3 class="modal__titel">Creating new button</h3>
-        <input class="modal__name" type="text" placeholder="Enter button name...">
-        <textarea class="modal__text" name="" id="" cols="30"
-          placeholder="Paste text and press Create button"></textarea>
-        <button class="btn modal__btn">Create button</button>
       </div>
     </div>
+
   </main>
   <footer>
 

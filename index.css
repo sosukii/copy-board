@@ -1,8 +1,22 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: 0.3s;
+@import url("./css/reset.css");
+@import url("./css/baseElementStyle.css");
+
+.container {
+  padding-top: 40px;
+}
+.wrapper {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: rgba(192, 34, 245, 0.641) 0px 5px 15px;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
 }
 
 .overlay {
@@ -32,11 +46,15 @@
   transform: translate(-50%, -50%);
   opacity: 0;
   border-radius: 2px;
+
+  z-index: -1;
+  pointer-events: none;
 }
 
 .modal_show {
   opacity: 1;
   z-index: 3;
+  pointer-events: all;
 }
 
 .modal:hover,
